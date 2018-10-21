@@ -3,7 +3,7 @@ import {show} from '../actions/ShowGames';
 import {hide} from '../actions/HideGames';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import '../styles/main.css';
+
 
 
 class EntryContent extends Component {
