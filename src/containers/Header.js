@@ -23,10 +23,8 @@ class NavAndSearch extends Component {
             link_block: "linkBlock",
             dropdown: false,
 
-            modal_window: false,
-            modal_window_2: false,
-            modal_window_3: false,
-            modal_window_4: false,
+            modal_window: null,
+
             
         };
 
@@ -119,26 +117,23 @@ unselectAll() {
 
 /*Модальные окна*/
 ModalActive() {
-     this.setState({ modal_window: true });
+     this.setState({ modal_window: "modal_window_1" });
     }
 
 ModalActive_2() {
-    this.setState({modal_window_2: true })
+    this.setState({modal_window: "modal_window_2" })
 }
 
 ModalActive_3() {
-    this.setState({modal_window_3: true })
+    this.setState({modal_window: "modal_window_3" })
 }
 
 ModalActive_4() {
-    this.setState({modal_window_4: true })
+    this.setState({modal_window: "modal_window_4" })
 }
 
 ModalUnselect() {
-    this.setState({modal_window:   false })
-    this.setState({modal_window_2: false })
-    this.setState({modal_window_3: false })
-    this.setState({modal_window_4: false })
+    this.setState({modal_window: null})
     this.unselectAll()
 
 
@@ -198,6 +193,46 @@ innerContain() {
 
 }
 
+ModalGamePic(item) {
+    switch (this.state.modal_window) {
+
+
+        case "modal_window_1":
+
+        return (
+            this.props.game[item + "_1"]
+
+            ) 
+        break;
+
+        case "modal_window_2":
+
+        return (
+             this.props.game[item + "_2"]
+
+            ) ;
+        break;
+
+        case "modal_window_3":
+
+        return (
+             this.props.game[item + "_3"]
+
+            ) ;
+        break;
+
+        case "modal_window_4":
+
+        return (
+             this.props.game[item + "_4"]
+
+            ) ;
+        break;
+
+
+    }
+}
+
 
 
 
@@ -223,143 +258,28 @@ innerContain() {
 
                 <h4 className="modal_hading">{this.props.game.name_1}</h4>
 
-                <img onClick={() => {this.setState({modal_window: false})}}   className="image_modal" src={this.props.game.img_1} />
+                <img onClick={() => {this.setState({modal_window: false})}}   className="image_modal" src={this.ModalGamePic("img")} />
 
                             <table>
                             <tbody>
 
-<tr><td>год</td><td>{this.props.game.year_1}</td></tr>
-<tr><td>страна</td><td>{this.props.game.country_1}</td></tr>
-<tr><td>жанр</td><td>{this.props.game.genre_1}</td></tr>
-<tr><td>разработчики</td><td>{this.props.game.developer_1}</td></tr>
+<tr><td>год</td><td>{this.ModalGamePic("year")}</td></tr>
+<tr><td>страна</td><td>{this.ModalGamePic("country")}</td></tr>
+<tr><td>жанр</td><td>{this.ModalGamePic("genre")}</td></tr>
+<tr><td>разработчики</td><td>{this.ModalGamePic("developer")}</td></tr>
 </tbody>
 </table>
 
-                        <p  className="modal_description">{this.props.game.description_1}</p>
+                        <p  className="modal_description">{this.ModalGamePic("description")}</p>
                         <a className= "modal_link">Показать полностью...</a>
 
                             </div>
                             </div>
                             
                 )
-       
-    } else if (this.state.modal_window_2) {
+    } 
+}
 
-        return (
-
-
-                <div className="modal_wrapper"  >
-
-                            
-                <div onClick={() => {
-                            this.ModalUnselect() }}  className="modal_unselect"></div>
-                            
-
-                <div className="modal"  > 
-
-                <h4 className="modal_hading">{this.props.game.name_2}</h4>
-
-                <img onClick={() => {this.setState({modal_window_2: false})}} className="image_modal" src={this.props.game.img_2} />
-
-                            <table>
-                            <tbody>
-
-<tr><td>год</td><td>{this.props.game.year_2}</td></tr>
-<tr><td>страна</td><td>{this.props.game.country_2}</td></tr>
-<tr><td>жанр</td><td>{this.props.game.genre_2}</td></tr>
-<tr><td>разработчики</td><td>{this.props.game.developer_2}</td></tr>
-</tbody>
-</table>
-
-                        <p  className="modal_description">{this.props.game.description_2}</p>
-                        <a className= "modal_link">Показать полностью...</a>
-
-                            </div>
-                            </div>
-                            
-                )
-
-
-    } else if (this.state.modal_window_3) {
-
-        return (
-
-
-                <div className="modal_wrapper"  >
-
-                            
-                <div onClick={() => {
-                            this.ModalUnselect() }}  className="modal_unselect"></div>
-                            
-
-                <div className="modal"  > 
-
-                <h4 className="modal_hading">{this.props.game.name_3}</h4>
-
-                <img onClick={() => {this.setState({modal_window_3: false})}} className="image_modal" src={this.props.game.img_3} />
-
-                            <table>
-                            <tbody>
-
-<tr><td>год</td><td>{this.props.game.year_3}</td></tr>
-<tr><td>страна</td><td>{this.props.game.country_3}</td></tr>
-<tr><td>жанр</td><td>{this.props.game.genre_3}</td></tr>
-<tr><td>разработчики</td><td>{this.props.game.developer_3}</td></tr>
-</tbody>
-</table>
-
-                        <p  className="modal_description">{this.props.game.description_3}</p>
-                        <a className= "modal_link">Показать полностью...</a>
-
-                            </div>
-                            </div>
-
-                            )
-
-
-     } else if (this.state.modal_window_4) {
-
-        return (
-
-
-                <div className="modal_wrapper"  >
-
-                            
-                <div onClick={() => {
-                            this.ModalUnselect() }}  className="modal_unselect"></div>
-                            
-
-                <div className="modal"  > 
-
-                <h4 className="modal_hading">{this.props.game.name_4}</h4>
-
-                <img onClick={() => {this.setState({modal_window_4: false})}} className="image_modal" src={this.props.game.img_4} />
-
-                            <table>
-                            <tbody>
-
-<tr><td>год</td><td>{this.props.game.year_4}</td></tr>
-<tr><td>страна</td><td>{this.props.game.country_4}</td></tr>
-<tr><td>жанр</td><td>{this.props.game.genre_4}</td></tr>
-<tr><td>разработчики</td><td>{this.props.game.developer_4}</td></tr>
-</tbody>
-</table>
-
-                        <p  className="modal_description">{this.props.game.description_4}</p>
-                        <a className= "modal_link">Показать полностью...</a>
-
-                            </div>
-                            </div>
-                            
-                )
-
-
-    }
-
- }
-
-
-     
 
 render() {
 
@@ -449,8 +369,6 @@ render() {
         <div  > {this.ModalPreview()}</div>
 
 
-
-
 </div>
 <div>{this.rendDrop()}</div>
 </div>
@@ -473,6 +391,4 @@ function mapDispatchToProps (dispatch) {
 
 }
 
-
 export default connect(mapStateToProps, mapDispatchToProps )(NavAndSearch);
-

@@ -219,18 +219,18 @@ export default function () {
 		year_4: "2012",
 		country_4: "США",
 		developer_4: "Blizzard Entertainment",
-		genre_4: "AAction/RPG",
+		genre_4: "Action/RPG",
 		description_4: "Игра является частью серии игр Diablo и прямым продолжением Diablo II. Действие игры, как и в предыдущих частях серии, происходит в мире тёмного фэнтези, называемом Санктуарий . События развиваются вокруг борьбы армии Небес с армией Преисподней за мир Санктуария. Персонажи игроков не являются прямыми последователями этих фракций, однако тяготеют к силам Небес, так как армии Преисподней стремятся поработить и разрушить Санктуарий — их родной мир.",
 
 		
 		img_1:
-		"https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_TheElderScrollsVSkyrim_image1600w.jpg",
+		skyrim,
 		img_2:
-		"https://mfst.igromania.ru/wp-content/uploads/2015/12/witcher3-2.jpg",
+		witcher,
 		img_3:
-		"https://www.whitneyupdate.com/wp-content/uploads/2016/12/fallout-4.png",
+		fallout,
 		img_4:
-		"http://www.entertainmentfuse.com/wp-content/uploads/2013/12/ros-logo.jpg"
+		diablo
 	},
 	
 
